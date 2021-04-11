@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-03-31T04:13:40.442Z</updated>
+  <updated>2021-04-11T08:27:54.357Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>古日语文法（1）- 五十音图和古语假名遣</title>
+    <link href="http://yoursite.com/2021/04/11/06/"/>
+    <id>http://yoursite.com/2021/04/11/06/</id>
+    <published>2021-04-11T07:09:26.185Z</published>
+    <updated>2021-04-11T08:27:54.357Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在学习N3的道路上偶尔开始接触比较深奥/古早的语法，然后思绪就开始从原来的仅追求知其然变成了想知其所以然。又偶然看到了一些关于语源和文法分析的文章，所以打算入门一下古日语 —— 其中的一部分对理解现代日语是很有帮助的。</p><a id="more"></a><h1 id="五十音图"><a href="#五十音图" class="headerlink" title="五十音图"></a>五十音图</h1><p>在入门现代日语的时候，大部分人接触的第一道门槛就是记忆五十音图。说是五十音图，其实不如说是46音图。除了「ア行」、「カ行」、「サ行」、「タ行」、「ナ行」、「ハ行」、「マ行」、「ラ行」的八行是完整的之外，「ヤ行」只保留了「や・ゆ・よ」，「ワ行」只保留了「わ・を」，再另外加上一个拨音「ん」。</p><p>而在古语中，五十音图确确实实是五十个音。在其余八行仍为完整的情况下，「ヤ行」和「ワ行」也是完整的。</p><div class="table-container"><table><thead><tr><th></th><th>ア段</th><th>イ段</th><th>ウ段</th><th>エ段</th><th>オ段</th></tr></thead><tbody><tr><td>ヤ行</td><td>や　ya</td><td><strong>い</strong>　i</td><td>ゆ　yu</td><td><strong>え</strong>　e</td><td>よ　yo</td></tr><tr><td>ワ行</td><td>わ　wa</td><td><strong>ゐ</strong>　i</td><td><strong>う</strong>　u</td><td><strong>ゑ</strong>　e</td><td>を　wo</td></tr></tbody></table></div><h1 id="假名遣"><a href="#假名遣" class="headerlink" title="假名遣"></a>假名遣</h1><h2 id="「ハ行」的读音"><a href="#「ハ行」的读音" class="headerlink" title="「ハ行」的读音"></a>「ハ行」的读音</h2><p>古语中 「ハ行」的读音一般为「ワ行」，这也是为什么提示助词は（表主题）直到如今还在念wa的原因。</p><blockquote><p><strong>いはひ</strong>　→  祝い</p><p><strong>いへ</strong>　→  家</p><p><strong>いふ</strong>　→  言う</p></blockquote><p>但是当「ハ行」位于语头的时候，不变音。</p><blockquote><p><strong>はな</strong>　→  花</p></blockquote><h2 id="双重母音的连读"><a href="#双重母音的连读" class="headerlink" title="双重母音的连读"></a>双重母音的连读</h2><p>当有两个母音连在一起的时候，为了发音方便，会产生音变。具体为：</p><ul><li>あう　au →　おう ō</li><li>いう　iu →　ゆう yū</li><li>えう　eu →　よう yō</li><li>おう　ou →　おう ō</li></ul><blockquote><p><strong>あうむ</strong>　→　鸚鵡(おうむ）</p><p><strong>いうなり</strong>　→　優なり(ゆうなり）</p><p><strong>えうじ</strong>　→　用事(ようじ）</p><p><strong>おうな</strong>　→　嫗(おうな）</p></blockquote><h2 id="以直音表拗音"><a href="#以直音表拗音" class="headerlink" title="以直音表拗音"></a>以直音表拗音</h2><p>古语中有些情况下，假名的普通组合能音变成拗音。以两个例子来说明：</p><blockquote><p><strong>てふ</strong>　→　てう　t[eu] →  　t[yō] 　→　ちょう　蝶</p><p><strong>けふ</strong>　→　けう　k[eu] →  　k[yō] 　→　きょう　今日</p></blockquote><p>以上的例子结合了ha的wa音变和双重母音的连读。</p><h2 id="「ゐ、ゑ、を」的读音"><a href="#「ゐ、ゑ、を」的读音" class="headerlink" title="「ゐ、ゑ、を」的读音"></a>「ゐ、ゑ、を」的读音</h2><p>他们的读音即为i，e，o。</p><blockquote><p><strong>居る（ゐる）</strong>　→　いる</p><p><strong>声（こゑ）</strong>　→　こえ</p><p><strong>折（をり）</strong>　→　おり</p></blockquote><h2 id="「む」的读音"><a href="#「む」的读音" class="headerlink" title="「む」的读音"></a>「む」的读音</h2><p>在单词中间的「む」，助动词「む・らむ」，助词「なむ」中的「む」都读成拨音「ん」。</p><blockquote><p> <strong>東（ひむがし）</strong>　→　ひんがし</p><p><strong>行くらむ（いくらむ）</strong>　→　行くらん</p></blockquote><h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>结合以上五个常用的古语假名遣，严格意义上无论古语中的词汇是怎么写的，都能念出他们的正确读音。以下左边是古语中一些词汇的假名标法，将他们翻译之后发现读法和现代相差无几。所以一般，无论古语里的假名注音写的多么fancy，读法还是会和现代日语很相似。</p><blockquote><p><strong>匂ひ（にほひ）</strong>　→　匂い（におい）</p><p><strong>田舎（ゐなか）</strong>　→　田舎（いなか）</p><p><strong>酔ふ（ゑふ）</strong>　→　酔う（よう）</p><p><strong>荻（をぎ）</strong>　→　荻（おぎ）</p><p><strong>扇（あふぎ）</strong>　→　扇（おうぎ）</p><p><strong>追ふ（おふ）</strong>　→　追う（おう）</p><p><strong>手水（てうづ）</strong>　→　手水（ちょうず）</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在学习N3的道路上偶尔开始接触比较深奥/古早的语法，然后思绪就开始从原来的仅追求知其然变成了想知其所以然。又偶然看到了一些关于语源和文法分析的文章，所以打算入门一下古日语 —— 其中的一部分对理解现代日语是很有帮助的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="语言" scheme="http://yoursite.com/categories/%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="日语" scheme="http://yoursite.com/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="语法" scheme="http://yoursite.com/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>以「通」为语干的日语动词辨析</title>
