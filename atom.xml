@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-04-11T08:27:54.357Z</updated>
+  <updated>2021-04-21T09:41:32.249Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>古日语文法（2）- 动词活用及接续</title>
+    <link href="http://yoursite.com/2021/04/21/07/"/>
+    <id>http://yoursite.com/2021/04/21/07/</id>
+    <published>2021-04-21T07:41:52.683Z</published>
+    <updated>2021-04-21T09:41:32.249Z</updated>
+    
+    <content type="html"><![CDATA[<p>动词活用很好玩很有意思就是了。</p><a id="more"></a><p>日语中的活用（かつよう）指的是对用言和助动词进行的词形变化，以适应于不同的语气及语义，也可以说成日语中的变位。用言指的是动词，形容词和形容动词。</p><p>这里提一句动词/形容词/形容动词均属于自立语。自立语指的是可以直接使用，具有实义的词汇种类。除了该三类外还有不能活用的名词，副词，连体词，接续词和感动词。与自立语相对立的则是附属语，附属语中能够活用的是助动词，不能活用的是助词。</p><p>这篇文章主要先介绍动词的活用。用现在的语法举个简单的例子，比如「読む」，它在接「ます」的时候会变成「読み」，接「ない」的时候会变成「読ま」，接「ば」的时候会变成「読め」。</p><p>如果大家使用市面上普遍的日语教材的话，动词活用应该会根据一类动词，二类动词和三类动词介绍他们不同的活用方式。日本的教育文法则是把动词分为五段活用，上一段活用，下一段活用，カ行活用和サ行活用，分别对应一类，二类，来る和以する为后缀的三类动词。</p><p>古日语中则将动词分为九类，其中四段活用，上一段活用，上二段活用，下一段活用和下二段活用统称为正格活用；而其余四类 - カ行変格活用、サ行変格活用、ラ行変格活用和ナ行変格活用则统称为变格活用。</p><h1 id="活用种类"><a href="#活用种类" class="headerlink" title="活用种类"></a>活用种类</h1><p>再介绍九类动词的活用之前，先来看看有哪些活用的种类。 正如上文用「読む」举的例子所言，不同的接续涉及到的活用是不同的。日语中共有六类活用。</p><h2 id="未然形"><a href="#未然形" class="headerlink" title="未然形"></a>未然形</h2><p>表示还没有发生，还未这样的语气。否定的时候会用到这种活用，古语中表示推量“好像”的时候会用到，表示被动，使役的时候也会用到。类似于现代日语里所谓的「ない」形。</p><h2 id="连用形"><a href="#连用形" class="headerlink" title="连用形"></a>连用形</h2><p>表示中顿，名词化，接其他用言，接一些助动词的时候。类似于现代日语里所谓的「ます」形，「て」形和「た」形。</p><h2 id="终止形"><a href="#终止形" class="headerlink" title="终止形"></a>终止形</h2><p>后面不接续任何东西，或者只接续终助词（语气助词）的时候使用。类似于现代日语里的动词现在肯定简体形。</p><h2 id="连体形"><a href="#连体形" class="headerlink" title="连体形"></a>连体形</h2><p>后接续体言，也即是名词的形式。现代日语里连体形和终止形已经几乎是统一了，你可以说「君に<strong>会う</strong>」，也可以用同样的形式说「君と<strong>会う</strong>場合」。但在古日语中他们常常是不一样的。</p><h2 id="已然形"><a href="#已然形" class="headerlink" title="已然形"></a>已然形</h2><p>也叫做假定形。现代日语里可以接「ば」表示假定条件，古日语里常用于表示原因和理由（假定条件不用此形式）。</p><h2 id="命令形"><a href="#命令形" class="headerlink" title="命令形"></a>命令形</h2><p>和终止形一样，后面不接任何东西，或者只接终助词，但用于表示命令的形式。</p><h1 id="正格活用"><a href="#正格活用" class="headerlink" title="正格活用"></a>正格活用</h1><h2 id="四段活用"><a href="#四段活用" class="headerlink" title="四段活用"></a>四段活用</h2><p>以「笑む」（えむ）举例。</p><div class="table-container"><table><thead><tr><th>未然形</th><th>连用形</th><th>终止形</th><th>连体形</th><th>已然形</th><th>命令形</th></tr></thead><tbody><tr><td>笑<strong>ま</strong></td><td>笑<strong>み</strong></td><td>笑<strong>む</strong></td><td>笑<strong>む</strong></td><td>笑<strong>め</strong></td><td>笑<strong>め</strong></td></tr></tbody></table></div><p>简单来记的话可以去掉词干把变形部分记成「ア・イ・ウ・ウ・エ・エ」。由于只涉及到a，i，u，e四段，故被称为四段活用。这类动词和现代日语里的一类动词大部分是重叠的。</p><h2 id="上一段活用"><a href="#上一段活用" class="headerlink" title="上一段活用"></a>上一段活用</h2><p>以「見る」举例。</p><div class="table-container"><table><thead><tr><th>未然形</th><th>连用形</th><th>终止形</th><th>连体形</th><th>已然形</th><th>命令形</th></tr></thead><tbody><tr><td>み</td><td>み</td><td>みる</td><td>みる</td><td>みれ</td><td>みよ</td></tr></tbody></table></div><p>简单记忆的话则是「イ・イ・イる・イる・イれ・イよ」。由于活用只涉及到i段（u段的上一段），故被称为上一段活用。这一类单词很好记，词尾る之前只有单个i段的音。常用的有：</p><ul><li>見る　みる</li><li>煮る　にる　</li><li>似る　にる</li><li>干る　ひる</li><li>着る　きる</li><li>射る　いる</li><li>鋳る　いる</li><li>居る　ゐる</li><li>率る　ゐる</li></ul><h2 id="下一段活用"><a href="#下一段活用" class="headerlink" title="下一段活用"></a>下一段活用</h2><p>常用的只有「蹴る」（ける）这一个单词。</p><div class="table-container"><table><thead><tr><th>未然形</th><th>连用形</th><th>终止形</th><th>连体形</th><th>已然形</th><th>命令形</th></tr></thead><tbody><tr><td>け</td><td>け</td><td>ける</td><td>ける</td><td>けれ</td><td>けよ</td></tr></tbody></table></div><p>简单记忆的话则是「ケ・ケ・ケる・ケる・ケれ・ケよ」。由于活用只涉及到e段（u段的下一段），故被称为下一段活用。</p><h2 id="上二段活用"><a href="#上二段活用" class="headerlink" title="上二段活用"></a>上二段活用</h2><p>以「過ぐ」举例。</p><div class="table-container"><table><thead><tr><th>未然形</th><th>连用形</th><th>终止形</th><th>连体形</th><th>已然形</th><th>命令形</th></tr></thead><tbody><tr><td>過ぎ</td><td>過ぎ</td><td>過ぐ</td><td>過ぐる</td><td>過ぐれ</td><td>過ぎよ</td></tr></tbody></table></div><p>记忆的时候则是可以简单记成「イ・イ・ウ・ウる・ウれ・イよ」。由于涉及到了i段和u段，故被称为上二段活用。</p><h2 id="下二段活用"><a href="#下二段活用" class="headerlink" title="下二段活用"></a>下二段活用</h2><p>以「受く」举例。</p><div class="table-container"><table><thead><tr><th>未然形</th><th>连用形</th><th>终止形</th><th>连体形</th><th>已然形</th><th>命令形</th></tr></thead><tbody><tr><td>受け</td><td>受け</td><td>受く</td><td>受くる</td><td>受くれ</td><td>受けよ</td></tr></tbody></table></div><p>记忆的时候则是可以简单记成「ケ・ケ・ウ・ウる・ウれ・ケよ」。由于涉及到了e段和u段，故被称为下二段活用。</p><h1 id="变格活用"><a href="#变格活用" class="headerlink" title="变格活用"></a>变格活用</h1><h2 id="カ行变格活用"><a href="#カ行变格活用" class="headerlink" title="カ行变格活用"></a>カ行变格活用</h2><p>一般指的是「来る」这个动词的活用。</p><div class="table-container"><table><thead><tr><th>未然形</th><th>连用形</th><th>终止形</th><th>连体形</th><th>已然形</th><th>命令形</th></tr></thead><tbody><tr><td>こ</td><td>き</td><td>く</td><td>くる</td><td>くれ</td><td>こ（よ）</td></tr></tbody></table></div><p>和现代日语的差别主要在于终止形只用く而不用くる，还有命令形也并不是こい而是こ或者こよ。</p><h2 id="サ行变格活用"><a href="#サ行变格活用" class="headerlink" title="サ行变格活用"></a>サ行变格活用</h2><p>典型的有「する」和「おはす」这两个动词。「おはす」为「いらっしゃる」的古语。</p><div class="table-container"><table><thead><tr><th>未然形</th><th>连用形</th><th>终止形</th><th>连体形</th><th>已然形</th><th>命令形</th></tr></thead><tbody><tr><td>せ</td><td>し</td><td>す</td><td>する</td><td>すれ</td><td>せよ</td></tr></tbody></table></div><h2 id="ナ行变格活用"><a href="#ナ行变格活用" class="headerlink" title="ナ行变格活用"></a>ナ行变格活用</h2><p>典型的有「死ぬ」和「往ぬ・去ぬ」。以「往ぬ」举例。</p><div class="table-container"><table><thead><tr><th>未然形</th><th>连用形</th><th>终止形</th><th>连体形</th><th>已然形</th><th>命令形</th></tr></thead><tbody><tr><td>往な</td><td>往に</td><td>往ぬ</td><td>往ぬる</td><td>往ぬれ</td><td>往ね</td></tr></tbody></table></div><h2 id="ラ行变格活用"><a href="#ラ行变格活用" class="headerlink" title="ラ行变格活用"></a>ラ行变格活用</h2><p>典型的有「あり」、「をり」、「はべり」、「いまそかり」等。以「あり」举例。</p><div class="table-container"><table><thead><tr><th>未然形</th><th>连用形</th><th>终止形</th><th>连体形</th><th>已然形</th><th>命令形</th></tr></thead><tbody><tr><td>あら</td><td>あり</td><td>あり</td><td>ある</td><td>あれ</td><td>あれ</td></tr></tbody></table></div><p>这个变格活用和四段活用的唯一差别是终止形和连用形同形而不是和连体形同形。</p><h1 id="特殊注意点"><a href="#特殊注意点" class="headerlink" title="特殊注意点"></a>特殊注意点</h1><h2 id="同一个动词古今分类不同"><a href="#同一个动词古今分类不同" class="headerlink" title="同一个动词古今分类不同"></a>同一个动词古今分类不同</h2><p>比如说「借りる」这个单词，现代日语中他是上一段活用，表否定的时候用未然形加上打消助动词「ない」或者「ず」，现代日语中应该是「借りない」。而古日语中，「借る」是一个四段活用动词，表否定的时候应该为「借らず」。</p><p>同样的还有「足る」「飽く」在古语中均为四段活用，而在现代日语中均为一段活用。「恨む」在古日语中为上二段活用，而在现代日语中为五段活用。</p><h2 id="容易与「ア行」搞混的变形部分"><a href="#容易与「ア行」搞混的变形部分" class="headerlink" title="容易与「ア行」搞混的变形部分"></a>容易与「ア行」搞混的变形部分</h2><p>「老ゆ」（おゆ）、「悔ゆ」（くゆ）、「報ゆ」（むくゆ）均为ヤ行上二段动词，虽然他们的未然形是以「い」结尾的，但他们不是「ア行」的活用。</p><p>「覚ゆ」（おぼゆ）、「燃ゆ」（もゆ）、「絶ゆ」（たゆ）、「見ゆ」（みゆ）均为ヤ行下二段动词，虽然他们的未然形是以「え」结尾的，但他们不是「ア行」的活用。</p><p>「植う」（うう）、「飢う」（うう）、「据う」（すう）均为ワ行下二段动词，虽然他们的终止形都是以「う」结尾的，但「植う」的未然形是「植ゑ」而不是「植え」。</p><h2 id="终止形只有一个假名的动词"><a href="#终止形只有一个假名的动词" class="headerlink" title="终止形只有一个假名的动词"></a>终止形只有一个假名的动词</h2><p>「得」（う）、「経」（ふ）、「寝」（ね）他们都是下二段动词。比如「得」，他的活用形则为「得（え）・得（え）・得（う）・得る（うる）・得れ（うれ）・得よ（えよ）」。</p><h2 id="具有两种活用的动词"><a href="#具有两种活用的动词" class="headerlink" title="具有两种活用的动词"></a>具有两种活用的动词</h2><p>「頼む」、「被く」（かづく）、「漬つ」（ひつ）都有四段和下二段两种活用方法，他们的区别是一个为他动词，一个为自动词。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;动词活用很好玩很有意思就是了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="语言" scheme="http://yoursite.com/categories/%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="日语" scheme="http://yoursite.com/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="语法" scheme="http://yoursite.com/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>古日语文法（1）- 五十音图和古语假名遣</title>
