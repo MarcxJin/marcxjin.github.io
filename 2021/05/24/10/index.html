@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="刷题,数据结构,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Marc Jin" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="这篇文章将解释面试中常用的图算法 —— 关于BST，DFS，BFS等。面试中常用到的图算法基本局限在二叉树相关，以BFS或者DFS的方式对图进行遍历顺便储存相关的DP信息，以topological sort为主要的图顶点排序，还有将不同元素进行归类的union find算法。">
+<meta name="keywords" content="刷题,数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试中常用到的图算法">
+<meta property="og:url" content="http://yoursite.com/2021/05/24/10/index.html">
+<meta property="og:site_name" content="Marc Jin">
+<meta property="og:description" content="这篇文章将解释面试中常用的图算法 —— 关于BST，DFS，BFS等。面试中常用到的图算法基本局限在二叉树相关，以BFS或者DFS的方式对图进行遍历顺便储存相关的DP信息，以topological sort为主要的图顶点排序，还有将不同元素进行归类的union find算法。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2021-05-25T07:59:45.878Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试中常用到的图算法">
+<meta name="twitter:description" content="这篇文章将解释面试中常用的图算法 —— 关于BST，DFS，BFS等。面试中常用到的图算法基本局限在二叉树相关，以BFS或者DFS的方式对图进行遍历顺便储存相关的DP信息，以topological sort为主要的图顶点排序，还有将不同元素进行归类的union find算法。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/05/24/10/">
+
+
+
+
+
+  <title>面试中常用到的图算法 | Marc Jin</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Marc Jin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/24/10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marc Jin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marc Jin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">面试中常用到的图算法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-24T10:36:37-07:00">
+                2021-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这篇文章将解释面试中常用的图算法 —— 关于BST，DFS，BFS等。面试中常用到的图算法基本局限在二叉树相关，以BFS或者DFS的方式对图进行遍历顺便储存相关的DP信息，以topological sort为主要的图顶点排序，还有将不同元素进行归类的union find算法。</p>
+<a id="more"></a>
+<h1 id="Representations-of-the-graph"><a href="#Representations-of-the-graph" class="headerlink" title="Representations of the graph"></a>Representations of the graph</h1><p>二叉树的话很简单，一般使用如下结构表示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, val=<span class="number">0</span>, left=None, right=None)</span>:</span></span><br><span class="line">    self.val = val</span><br><span class="line">    self.left = left</span><br><span class="line">    self.right = right</span><br></pre></td></tr></table></figure>
+<p>普通图的话，根据题目里所给定的或者需求选用不同的表示方法。假设已经提前知道所有顶点的集合，或者比较方便能够将顶点映射到整数的情况下，推荐使用二维数组。比如顶点是26个英文字母的情况下就可以使用这种方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># graph[i][j] = True 意味着有从i到j的边存在</span></span><br><span class="line">graph = [[<span class="literal">False</span>] * <span class="number">26</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(<span class="number">26</span>))]</span><br></pre></td></tr></table></figure>
+<p>不太好将顶点映射到整数的情况下，或者预先不知道所有顶点的集合而是需要遍历一遍才能构建图的情况下，选择使用HashMap，将顶点作为key。因为是一对多的结构，value所使用的结构可以为list或者set，根据需求进行选择。</p>
+<p>如果反正是要遍历一边endpoint的话，可以选择list简明扼要。如果只需要判断有没有这个边存在，或者是需要快速添加和移除边的话，可以使用set。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> start, end <span class="keyword">in</span> l: <span class="comment"># l = [[1,2], [2,3], [4,5]]</span></span><br><span class="line">  lst = graph.get(start, [])</span><br><span class="line">  lst.append(end)  <span class="comment"># 使用list可能会重复添加边，如果不是simple graph的话</span></span><br><span class="line">  graph[start] = lst</span><br></pre></td></tr></table></figure>
+<h1 id="DFS-BFS"><a href="#DFS-BFS" class="headerlink" title="DFS, BFS"></a>DFS, BFS</h1><p>DFS和BFS为两种遍历图的方法，为深度优先和广度优先。顾名思义，前者会先将某一条路径遍历到底，再寻找另一条路径。而后者是根据离出发点的先后顺序，先遍历完最近的那些点，再一层一层往外铺开。</p>
+<p>一般情况下两者是可以通用的。但如果是要寻找从某一点出发的最短路径，那么BFS无论从理论上还是从实际的算法复杂度上都似乎更加合适。</p>
+<p>DFS常用recursion和iterative两种方法。recursion的话，根据任务的要求，我们一般可以在三个地方加上自己的逻辑来解题，一为刚访问这个点的时候，二为将这个点所有的邻边都访问完的时候，三为返回和这个点相关的数值或者布尔值，通常用在dp问题里。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">visited = set()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(node)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> node <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">		visited.add(node)</span><br><span class="line">    <span class="comment"># 1</span></span><br><span class="line">    <span class="keyword">for</span> end <span class="keyword">in</span> graph[node]:</span><br><span class="line">      dfs(end)</span><br><span class="line">    <span class="comment"># 2</span></span><br><span class="line">  <span class="comment"># 3: return xxx</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> graph:</span><br><span class="line">  dfs(key) <span class="comment"># treat every node as start point, so that we visit the stand-alone part</span></span><br></pre></td></tr></table></figure>
+<p>iterative的话，dfs的结构更像stack，所以我们使用stack。这个方法一般用于单source的题目中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(start, graph)</span>:</span></span><br><span class="line">  stack = []</span><br><span class="line">  stack.append(start)</span><br><span class="line">  <span class="keyword">while</span> stack:</span><br><span class="line">    node = stack.pop()</span><br><span class="line">    <span class="keyword">if</span> node <span class="keyword">in</span> graph:</span><br><span class="line">      <span class="keyword">for</span> end <span class="keyword">in</span> graph[node]:</span><br><span class="line">        stack.append(node)</span><br></pre></td></tr></table></figure>
+<p>BFS则一般使用iterative的方法，和DFS不同，我们使用queue，因为先加入的（离原点近的）需要先被遍历完，再遍历远的（FIFO）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bfs</span><span class="params">(start, start)</span>:</span></span><br><span class="line">	queue = []</span><br><span class="line">  queue.append(start)</span><br><span class="line">  <span class="keyword">while</span> queue:</span><br><span class="line">    node = queue.pop(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">if</span> node <span class="keyword">in</span> graph:</span><br><span class="line">      <span class="keyword">for</span> end <span class="keyword">in</span> graph[node]:</span><br><span class="line">        queue.append(end)</span><br></pre></td></tr></table></figure>
+<p>在BST中使用DFS或者BFS的时候则简单的多，只要分别check当前node的left和right是否为None再依次遍历就行了。</p>
+<h1 id="Cycle-Detection"><a href="#Cycle-Detection" class="headerlink" title="Cycle Detection"></a>Cycle Detection</h1><p>如果一个图有cycle的话，那么从某个点出发，还没有访问完这个点为源点的所有边，就又会碰到这个点，故此使用DFS更为合理。这里的关键是，刚访问到这个点的时候，mark他，然后访问完所有的边之后，再unmark他。这个mark的数据结构，根据构建的简易性，访问的复杂度可以使用数组或者hashset。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_cycle</span><span class="params">(graph)</span>:</span></span><br><span class="line">  visited = set()</span><br><span class="line">  in_stack = set() <span class="comment"># 这里的visited和inStack均适用set，比较直观</span></span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">is_cycle_util</span><span class="params">(node)</span>:</span></span><br><span class="line">    visited.add(node)</span><br><span class="line">    in_stack.add(node)  <span class="comment">#标记我们开始访问这个点</span></span><br><span class="line">    </span><br><span class="line">		<span class="keyword">if</span> node <span class="keyword">in</span> graph:</span><br><span class="line">      <span class="keyword">for</span> end <span class="keyword">in</span> graph[node]:</span><br><span class="line">        <span class="keyword">if</span> end <span class="keyword">not</span> <span class="keyword">in</span> visited <span class="keyword">and</span> is_cycle_util(end):</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">if</span> end <span class="keyword">in</span> visited <span class="keyword">and</span> end <span class="keyword">in</span> in_stack:  <span class="comment"># We encounter this node again</span></span><br><span class="line">          <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    in_stack.remove(node) <span class="comment">#  移除，表示我们已经访问完毕</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span> key <span class="keyword">in</span> graph:</span><br><span class="line">    <span class="keyword">if</span> is_cycle_util(key):</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<h1 id="Topological-Sort"><a href="#Topological-Sort" class="headerlink" title="Topological Sort"></a>Topological Sort</h1><p>拓扑排序是基于有向边图的一种排序方法，拓扑排序出来的结果表示着有向图的起点一定会排在终点之前，结果常常不唯一。故这个排序方法可能用来理清需求关系，比如理清一系列dependents的先后顺序。</p>
+<p>拓扑排序常常有两种方法，第一种是贪心算法。从入度为0的顶点开始删边，删完之后将这个顶点放入拓扑排序的结果之中。然后在子图上重复这个步骤。这种方法同样也能检测cycle，因为正常情况下最后图里应该没有顶点也没有边了，但是cycle的情况下，最后还会有顶点在图里。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">topological_sort_greedy</span><span class="params">(graph)</span>:</span></span><br><span class="line">  in_degree = &#123;&#125;</span><br><span class="line">  result = []</span><br><span class="line">  <span class="keyword">for</span> vertice <span class="keyword">in</span> graph: <span class="comment"># we assume every vertice will be the key of the graph dict</span></span><br><span class="line">    in_degree[vertice] = len(graph[vertice])</span><br><span class="line">  stack = []</span><br><span class="line">  <span class="keyword">for</span> key <span class="keyword">in</span> in_degree:</span><br><span class="line">    <span class="keyword">if</span> in_degree[key] == <span class="number">0</span>: stack.append(key)</span><br><span class="line">  <span class="keyword">while</span> stack:</span><br><span class="line">    v = stack.pop()</span><br><span class="line">    result.append(v)</span><br><span class="line">    <span class="keyword">for</span> end <span class="keyword">in</span> graph[v]:</span><br><span class="line">      in_degree[end] = in_degree[end] - <span class="number">1</span></span><br><span class="line">      <span class="keyword">if</span> in_degree[end] == <span class="number">0</span>:</span><br><span class="line">        stack.append(end)</span><br><span class="line">   <span class="comment"># cycle detection, no need if not needed</span></span><br><span class="line">  <span class="keyword">for</span> key <span class="keyword">in</span> in_degree:</span><br><span class="line">    <span class="keyword">if</span> in_degree[key] &gt; <span class="number">0</span>:  <span class="comment"># 如果还有未删完的边，则存在cycle</span></span><br><span class="line">      print(<span class="string">"cycle detected."</span>)</span><br><span class="line">   <span class="keyword">return</span> result[::<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<p>另外一种则是DFS，把以一个顶点为开始所有的边全部都遍历之后，再加入最后的拓扑排序中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">topological_sort_dfs</span><span class="params">(graph)</span>:</span></span><br><span class="line">  result = []</span><br><span class="line">  visited = set()</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(node)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> node <span class="keyword">not</span> <span class="keyword">in</span> visited:</span><br><span class="line">      visited.add(node)</span><br><span class="line">      <span class="keyword">for</span> end <span class="keyword">in</span> graph[node]:</span><br><span class="line">        dfs(end)</span><br><span class="line">      result.append(node)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> v <span class="keyword">in</span> graph:</span><br><span class="line">    dfs(v)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result[::<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<p>当我们使用DFS的时候，我们也可以改进算法，让他也具备有检测cycle的功能。（一般说来，面试题不会假定没有cycle，所以写出来的算法最好也要有检测cycle的功能）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下面的代码结合了上面的topological_sort_dfs和之前的is_cycle</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sort_with_cycle_detection</span><span class="params">(graph)</span>:</span></span><br><span class="line">  result = []</span><br><span class="line">  visited = set()</span><br><span class="line">  in_stack = set()</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(node)</span>:</span></span><br><span class="line">		should_append = node <span class="keyword">not</span> <span class="keyword">in</span> visited</span><br><span class="line">    visited.add(node)</span><br><span class="line">    in_stack.add(node)</span><br><span class="line">    ret = <span class="literal">False</span></span><br><span class="line">   	<span class="keyword">for</span> end <span class="keyword">in</span> graph[node]:</span><br><span class="line">      <span class="keyword">if</span> end <span class="keyword">not</span> <span class="keyword">in</span> visited <span class="keyword">and</span> dfs(end):</span><br><span class="line">        ret = <span class="literal">True</span></span><br><span class="line">      <span class="keyword">if</span> end <span class="keyword">in</span> visited <span class="keyword">and</span> node <span class="keyword">in</span> in_stack:</span><br><span class="line">        ret = <span class="literal">True</span></span><br><span class="line">    in_stack.remove(node)</span><br><span class="line">    <span class="keyword">if</span> should_append:</span><br><span class="line">      result.append(node)</span><br><span class="line">		<span class="keyword">return</span> ret</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span> key <span class="keyword">in</span> graph:</span><br><span class="line">    <span class="keyword">if</span> dfs(key):</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">True</span> <span class="comment"># cycle detected</span></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">False</span> <span class="comment"># cycle not detected, and result[::-1] is the sort result</span></span><br></pre></td></tr></table></figure>
+<h1 id="Union-Find"><a href="#Union-Find" class="headerlink" title="Union Find"></a>Union Find</h1><p>Union find 可以把元素分成互不相交的几个集合，比如说leetcode的第721题就是一个典型的例子。做union find的时候，首先要把每个元素进行编号（我们使用list based的方法实现union find，比tree based的方法更容易用在面试中）。最后做完union find之后，还要能够轻易的访问到每个元素以此进行归类：你可以使用hashmap，也可以直接遍历id的幅值范围。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">union_find</span><span class="params">()</span>:</span></span><br><span class="line">  p = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>)] <span class="comment"># 每个元素i都指向自己，此时有100个disjoint set</span></span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">find</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="comment"># 如果x不是当前的代表元素，一个个顺着往上找，并且全部直接更新到父元素，这叫做path compression</span></span><br><span class="line">    <span class="keyword">if</span> p[x] != x:</span><br><span class="line">      p[x] = find(p[x])</span><br><span class="line">    <span class="keyword">return</span> p[x]</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">union</span><span class="params">(x,y)</span>:</span></span><br><span class="line">    <span class="comment"># 把x元素的根结点指向y元素的根结点，相当于merge两个集合。</span></span><br><span class="line">    <span class="comment"># 在更加优化的算法里，经常还需要看rank来决定把谁并到谁里面去。</span></span><br><span class="line">    p[find(x)] = find(y)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/刷题/" rel="tag"># 刷题</a>
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/05/09/09_n3/" rel="next" title="N3文法总结">
+                <i class="fa fa-chevron-left"></i> N3文法总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Marc Jin</p>
+              <p class="site-description motion-element" itemprop="description">Stay tuned</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Representations-of-the-graph"><span class="nav-number">1.</span> <span class="nav-text">Representations of the graph</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DFS-BFS"><span class="nav-number">2.</span> <span class="nav-text">DFS, BFS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cycle-Detection"><span class="nav-number">3.</span> <span class="nav-text">Cycle Detection</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Topological-Sort"><span class="nav-number">4.</span> <span class="nav-text">Topological Sort</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Union-Find"><span class="nav-number">5.</span> <span class="nav-text">Union Find</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Marc Jin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">Site Visit <span id="busuanzi_value_site_uv"></span> </span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">Article Visit <span id="busuanzi_value_page_pv"></span> </span>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
