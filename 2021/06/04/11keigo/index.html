@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="刷题,数据结构,">
+  <meta name="keywords" content="日语,JLPT,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="本文介绍了面试中关于Linked List的一些常用代码片段。">
-<meta name="keywords" content="刷题,数据结构">
+<meta name="description" content="本文总结了N4-N2中常见的敬语。">
+<meta name="keywords" content="日语,JLPT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="链表Linked List常用代码片段">
-<meta property="og:url" content="http://yoursite.com/2021/05/05/08_linkedlist/index.html">
+<meta property="og:title" content="日语中的常用敬语总结">
+<meta property="og:url" content="http://yoursite.com/2021/06/04/11keigo/index.html">
 <meta property="og:site_name" content="Marc Jin">
-<meta property="og:description" content="本文介绍了面试中关于Linked List的一些常用代码片段。">
+<meta property="og:description" content="本文总结了N4-N2中常见的敬语。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2021-05-06T00:52:15.281Z">
+<meta property="og:updated_time" content="2021-06-05T00:03:17.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="链表Linked List常用代码片段">
-<meta name="twitter:description" content="本文介绍了面试中关于Linked List的一些常用代码片段。">
+<meta name="twitter:title" content="日语中的常用敬语总结">
+<meta name="twitter:description" content="本文总结了N4-N2中常见的敬语。">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2021/05/05/08_linkedlist/">
+  <link rel="canonical" href="http://yoursite.com/2021/06/04/11keigo/">
 
 
 
 
 
-  <title>链表Linked List常用代码片段 | Marc Jin</title>
+  <title>日语中的常用敬语总结 | Marc Jin</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/05/08_linkedlist/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/04/11keigo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marc Jin">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">链表Linked List常用代码片段</h1>
+          <h1 class="post-title" itemprop="name headline">日语中的常用敬语总结</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-05-05T14:48:01-04:00">
-                2021-05-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-04T02:46:36-04:00">
+                2021-06-04
               </time>
             
 
@@ -317,8 +317,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算机/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机</span>
+                  <a href="/categories/语言/" itemprop="url" rel="index">
+                    <span itemprop="name">语言</span>
                   </a>
                 </span>
 
@@ -354,24 +354,162 @@
       
 
       
-        <p>本文介绍了面试中关于Linked List的一些常用代码片段。</p>
+        <p>本文总结了N4-N2中常见的敬语。</p>
 <a id="more"></a>
-<p>关于单链表最基础的知识就不说了，链表中每一个Node都可以用以下的class表示：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Class Node:</span><br><span class="line">	self.__init__(self, val = <span class="number">-1</span>, next = <span class="literal">None</span>):</span><br><span class="line">		self.val = val</span><br><span class="line">		self.next = next</span><br></pre></td></tr></table></figure>
-<p>在上算法课的时候可能还会更加完善的定义一个class单纯表示LinkedList，里面只有一个叫head的Node实例，但是在面试里为了简略没有这种必要。一般假设直接把链表头的Node作为一个input variable。</p>
-<h1 id="Traverse-a-linked-list"><a href="#Traverse-a-linked-list" class="headerlink" title="Traverse a linked list"></a>Traverse a linked list</h1><p>链表的本质就是在上一个Node里存储下一个Node的地址，以便于我们可以遍历整个链表。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">traverse_linked_list</span><span class="params">(head)</span>:</span></span><br><span class="line">	curr = head  <span class="comment">#指针</span></span><br><span class="line">  <span class="keyword">while</span> curr:  <span class="comment">#当指针没有指到末尾</span></span><br><span class="line">    <span class="comment"># 访问当前Node</span></span><br><span class="line">    curr = curr.next  <span class="comment">#指针指向下一个Node</span></span><br></pre></td></tr></table></figure>
-<p>如果最后需要复制一份当前的linked list，或者根据当前链表返回一个新的链表（比如说Leetcode#2），为了简便，我们常常先规定一个dummy node作为开头。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">return_a_copied_list</span><span class="params">(head)</span>:</span></span><br><span class="line">  <span class="comment">#dummy是最后要返回的链表头，curr是旧链表当前的位置，curr_new是返回链表的尾部</span></span><br><span class="line">  curr = head</span><br><span class="line">  dummy = Node()</span><br><span class="line">  curr_new = dummy</span><br><span class="line">  <span class="keyword">while</span> curr:</span><br><span class="line">    curr_new.next = Node(curr.val)</span><br><span class="line">    curr_new = curr_new.next</span><br><span class="line">    curr = curr.next</span><br><span class="line">  <span class="keyword">return</span> dummy.next <span class="comment">#最后返回的时候需要删除最开始的dummy node</span></span><br></pre></td></tr></table></figure>
-<p>你当然可以直接更新head成head.next，但我们就无法再追踪到输入链表的头部了。</p>
-<h1 id="Reverse-a-linked-list"><a href="#Reverse-a-linked-list" class="headerlink" title="Reverse a linked list"></a>Reverse a linked list</h1><p>很多题目里需要把一个linked list倒过来，这种需求的话因为我们还是只能从头访问链表，如果需要in place变换的话， 只需要一前一后两个指针，后指针是还没有变换过的剩余链表的头，前指针是反链表的尾部，在当前轮次，我们需要将后指针的next指向反链表的尾部，再更新前后指针，举一个例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1-&gt;2-&gt;3-&gt;4</span></span><br><span class="line"><span class="comment"># None&lt;-1 2-&gt;3-&gt;4 (prev:1, curr = 2)</span></span><br><span class="line"><span class="comment"># None&lt;-1&lt;-2 3-&gt;4 (prev:2, curr = 3)</span></span><br><span class="line"><span class="comment"># None&lt;-1&lt;-2&lt;-3 4 (prev:3, curr = 4)</span></span><br><span class="line"><span class="comment"># None&lt;-1&lt;-2&lt;-3&lt;-4 (prev:4, curr = None) end</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse_in_place</span><span class="params">(head)</span>:</span></span><br><span class="line">	prev, curr = <span class="literal">None</span>, head</span><br><span class="line">  <span class="keyword">while</span> curr:</span><br><span class="line">    tmp = curr.next <span class="comment">#记录curr.next因为马上我们要把curr.next指向prev了</span></span><br><span class="line">    curr.next, prev, curr = prev, curr, tmp</span><br><span class="line">  <span class="keyword">return</span> prev</span><br></pre></td></tr></table></figure>
-<p>如果你需要边reverse边构建一个新的linkedlist，那么prev指针永远指向新链表的头，curr只起到一个遍历旧链表的作用，代码可以改成：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span><span class="params">(head)</span>:</span></span><br><span class="line">  prev, curr = <span class="literal">None</span>, head</span><br><span class="line">  <span class="keyword">while</span> curr:</span><br><span class="line">    tmp = Node(curr.val)</span><br><span class="line">    tmp.next, prev = prev, tmp</span><br><span class="line">    curr = curr.next</span><br><span class="line">  <span class="keyword">return</span> prev</span><br></pre></td></tr></table></figure>
-<h1 id="Slow-and-fast-pointers"><a href="#Slow-and-fast-pointers" class="headerlink" title="Slow and fast pointers"></a>Slow and fast pointers</h1><p>快慢指针指的是两个指针从相同的起点一起开始跑，快指针每次跑两格，慢指针每次跑一格。这样当快指针跑到链表末尾的时候，慢指针正好处于链表的中间点。这种方法常常用来将链表等分为两份。按照需求，也可以有第三个指针slow_prev每次都更新为slow的前面一个Node，然后在最后的时候设置其next为None，这样就可以把链表分为两个子链表。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">split_linked_list</span><span class="params">(head)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next: <span class="comment">#链表长度为0或1时</span></span><br><span class="line">    <span class="keyword">return</span> head</span><br><span class="line">  slow, fast, slow_prev = head, head, <span class="literal">None</span></span><br><span class="line">  <span class="keyword">while</span> fast <span class="keyword">and</span> fast.next:</span><br><span class="line">    fast, slow_prev, slow = fast.next.next, slow, slow.next</span><br><span class="line">  slow_prev.next = <span class="literal">None</span>  <span class="comment">#这里slow_prev不可能为None，故为安全的访问</span></span><br><span class="line">  <span class="keyword">return</span> [head, slow] <span class="comment">#return two sub linked list</span></span><br></pre></td></tr></table></figure>
-<p>将快慢指针都初始化为head的话，slow指针最后要么指向最中间的元素（奇数个Node情况下），要么指向后部第一个元素（偶数个Node的情况下）。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1,2,3,4,5,6</span></span><br><span class="line"><span class="comment"># slow,fast = 1,1 -&gt; 2,3 -&gt; 3,5 -&gt; 4,None   slow = 4</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 1,2,3,4,5,6,7</span></span><br><span class="line"><span class="comment"># slow,fast = 1,1 -&gt; 2,3 -&gt; 3,5 -&gt; 4,7  slow = 4</span></span><br></pre></td></tr></table></figure>
+<h1 id="尊他语"><a href="#尊他语" class="headerlink" title="尊他语"></a>尊他语</h1><p>尊他语在对方身份比自己高的时候使用。</p>
+<h2 id="「お・ご〜になります。」"><a href="#「お・ご〜になります。」" class="headerlink" title="「お・ご〜になります。」"></a>「お・ご〜になります。」</h2><blockquote>
+<p>お客様はもう<strong>お</strong>帰り<strong>になりました</strong>。</p>
+<p>お食事はもう<strong>お</strong>済み<strong>になりました</strong>か。</p>
+</blockquote>
+<h2 id="「お・ご〜ください。」"><a href="#「お・ご〜ください。」" class="headerlink" title="「お・ご〜ください。」"></a>「お・ご〜ください。」</h2><p>くださる是くれる的尊敬语，所以这个句型本意就是用来表示让对方做某事。</p>
+<blockquote>
+<p>どうぞ<strong>お</strong>座り<strong>ください</strong>。</p>
+<p>エスカレーターを<strong>ご</strong>利用<strong>ください</strong>。</p>
+</blockquote>
+<h2 id="「お・ご〜です。」"><a href="#「お・ご〜です。」" class="headerlink" title="「お・ご〜です。」"></a>「お・ご〜です。」</h2><p>直接把动词的连用形当成名词来接续。</p>
+<blockquote>
+<p>きっとお父様は<strong>お</strong>喜び<strong>でしょう</strong>。</p>
+</blockquote>
+<h2 id="「られる」"><a href="#「られる」" class="headerlink" title="「られる」"></a>「られる」</h2><p>使用被动表示尊敬。</p>
+<blockquote>
+<p>先生は日本へ<strong>行かれます</strong>。</p>
+</blockquote>
+<h2 id="「お・ご〜願います。」"><a href="#「お・ご〜願います。」" class="headerlink" title="「お・ご〜願います。」"></a>「お・ご〜願います。」</h2><blockquote>
+<p>事故の状況をもう一度詳しく<strong>お</strong>話し<strong>願えます</strong>か。</p>
+<p>見学ご希望の方は、この書類に<strong>ご</strong>記入<strong>願います</strong>。</p>
+</blockquote>
+<h2 id="「特殊动词」"><a href="#「特殊动词」" class="headerlink" title="「特殊动词」"></a>「特殊动词」</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>动词</th>
+<th>尊他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>見る</td>
+<td>ご覧になる</td>
+</tr>
+<tr>
+<td>食べる・飲む</td>
+<td>召し上がる</td>
+</tr>
+<tr>
+<td>行く・いる</td>
+<td>おいでになる・いらっしゃる</td>
+</tr>
+<tr>
+<td>来る</td>
+<td>おいでになる・いらっしゃる・お見えになる・お越しになる</td>
+</tr>
+<tr>
+<td>する</td>
+<td>なさる</td>
+</tr>
+<tr>
+<td>言う</td>
+<td>おっしゃる</td>
+</tr>
+<tr>
+<td>くれる</td>
+<td>くださる</td>
+</tr>
+<tr>
+<td>知っている</td>
+<td>ご存知です</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="自谦语"><a href="#自谦语" class="headerlink" title="自谦语"></a>自谦语</h1><p>自谦语表示自己的动作时用。</p>
+<h2 id="「お・ご〜します・いたします。」"><a href="#「お・ご〜します・いたします。」" class="headerlink" title="「お・ご〜します・いたします。」"></a>「お・ご〜します・いたします。」</h2><p>いたす是する的自谦语。</p>
+<blockquote>
+<p>お荷物は私がお持ちします。</p>
+</blockquote>
+<h2 id="「お・ご〜申し上げる。」"><a href="#「お・ご〜申し上げる。」" class="headerlink" title="「お・ご〜申し上げる。」"></a>「お・ご〜申し上げる。」</h2><p>前面接「喜ぶ・祈る・答える・案内・相談・紹介」等动词。</p>
+<blockquote>
+<p>ただ今より今回のプロジェクトについて、私の方からお話<strong>申し上げます</strong>。</p>
+</blockquote>
+<h2 id="「ていただけますか。」"><a href="#「ていただけますか。」" class="headerlink" title="「ていただけますか。」"></a>「ていただけますか。」</h2><p>请求对方为你做事，受益人是你。</p>
+<blockquote>
+<p>教えていただけますか。</p>
+</blockquote>
+<h2 id="「させていただきます。」"><a href="#「させていただきます。」" class="headerlink" title="「させていただきます。」"></a>「させていただきます。」</h2><blockquote>
+<p> 頭が痛いんですが、帰らせていただけますか。</p>
+</blockquote>
+<h2 id="特殊动词"><a href="#特殊动词" class="headerlink" title="特殊动词"></a>特殊动词</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>动词</th>
+<th>自谦</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>見る</td>
+<td>拝見する</td>
+</tr>
+<tr>
+<td>見せる</td>
+<td>ご覧にいれる・お目にかける</td>
+</tr>
+<tr>
+<td>会う</td>
+<td>お目にかかる</td>
+</tr>
+<tr>
+<td>食べる・飲む</td>
+<td>いただく</td>
+</tr>
+<tr>
+<td>行く・来る</td>
+<td>参る・伺う</td>
+</tr>
+<tr>
+<td>聞く</td>
+<td>伺う・承る</td>
+</tr>
+<tr>
+<td>引き受ける</td>
+<td>承る</td>
+</tr>
+<tr>
+<td>する</td>
+<td>いたす</td>
+</tr>
+<tr>
+<td>言う</td>
+<td>申す</td>
+</tr>
+<tr>
+<td>あげる</td>
+<td>差し上げる</td>
+</tr>
+<tr>
+<td>もらう</td>
+<td>いただく・頂戴する</td>
+</tr>
+<tr>
+<td>思う</td>
+<td>存じる</td>
+</tr>
+<tr>
+<td>知っている</td>
+<td>存じる・存じ上げる</td>
+</tr>
+<tr>
+<td>借りる</td>
+<td>拝借する</td>
+</tr>
+<tr>
+<td>伝言する</td>
+<td>申し伝える</td>
+</tr>
+</tbody>
+</table>
+</div>
 
       
     </div>
@@ -389,9 +527,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/刷题/" rel="tag"># 刷题</a>
+            <a href="/tags/日语/" rel="tag"># 日语</a>
           
-            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+            <a href="/tags/JLPT/" rel="tag"># JLPT</a>
           
         </div>
       
@@ -404,8 +542,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/04/21/07/" rel="next" title="古日语文法（2）- 动词活用及接续">
-                <i class="fa fa-chevron-left"></i> 古日语文法（2）- 动词活用及接续
+              <a href="/2021/05/24/10/" rel="next" title="面试中常用到的图算法">
+                <i class="fa fa-chevron-left"></i> 面试中常用到的图算法
               </a>
             
           </div>
@@ -414,8 +552,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2021/05/09/09_n3/" rel="prev" title="N3文法总结">
-                N3文法总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2021/06/14/12_n2/" rel="prev" title="N2文法总结">
+                N2文法总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -555,7 +693,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Traverse-a-linked-list"><span class="nav-number">1.</span> <span class="nav-text">Traverse a linked list</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reverse-a-linked-list"><span class="nav-number">2.</span> <span class="nav-text">Reverse a linked list</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Slow-and-fast-pointers"><span class="nav-number">3.</span> <span class="nav-text">Slow and fast pointers</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#尊他语"><span class="nav-number">1.</span> <span class="nav-text">尊他语</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#「お・ご〜になります。」"><span class="nav-number">1.1.</span> <span class="nav-text">「お・ご〜になります。」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#「お・ご〜ください。」"><span class="nav-number">1.2.</span> <span class="nav-text">「お・ご〜ください。」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#「お・ご〜です。」"><span class="nav-number">1.3.</span> <span class="nav-text">「お・ご〜です。」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#「られる」"><span class="nav-number">1.4.</span> <span class="nav-text">「られる」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#「お・ご〜願います。」"><span class="nav-number">1.5.</span> <span class="nav-text">「お・ご〜願います。」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#「特殊动词」"><span class="nav-number">1.6.</span> <span class="nav-text">「特殊动词」</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自谦语"><span class="nav-number">2.</span> <span class="nav-text">自谦语</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#「お・ご〜します・いたします。」"><span class="nav-number">2.1.</span> <span class="nav-text">「お・ご〜します・いたします。」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#「お・ご〜申し上げる。」"><span class="nav-number">2.2.</span> <span class="nav-text">「お・ご〜申し上げる。」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#「ていただけますか。」"><span class="nav-number">2.3.</span> <span class="nav-text">「ていただけますか。」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#「させていただきます。」"><span class="nav-number">2.4.</span> <span class="nav-text">「させていただきます。」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊动词"><span class="nav-number">2.5.</span> <span class="nav-text">特殊动词</span></a></li></ol></li></ol></div>
             
 
           </div>
