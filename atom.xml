@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-09-19T21:19:38.542Z</updated>
+  <updated>2021-09-26T03:03:38.663Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>日检中那些泛意一……就……的语法</title>
+    <link href="http://yoursite.com/2021/09/25/15_shidai/"/>
+    <id>http://yoursite.com/2021/09/25/15_shidai/</id>
+    <published>2021-09-26T02:25:39.820Z</published>
+    <updated>2021-09-26T03:03:38.663Z</updated>
+    
+    <content type="html"><![CDATA[<p>在N3及其以上的语法中，有几个表示一怎么怎么样就怎么怎么样的语法。下面就列举他们中的一些以及他们的适用场景。</p><a id="more"></a><p>以下的例句部分或全部来源于新完全掌握。</p><h2 id="が早いか"><a href="#が早いか" class="headerlink" title="が早いか"></a>が早いか</h2><p>表示一怎么样就怎么样，后面需要跟瞬时性的动作，常常是一些令人惊讶的事情。不跟人的意志。</p><blockquote><p>海外旅行に出発の日、山田さんは空港に着くが早いか、コンビニに駆け込んだ。</p></blockquote><h2 id="や・や否や"><a href="#や・や否や" class="headerlink" title="や・や否や"></a>や・や否や</h2><p>和上面那个语法点几乎无区别，除了这个文型常常被使用在正式的文稿或新闻中。因此后面几乎就只跟着中性的事实。</p><blockquote><p>私はその人の顔を一眼見るや、二十年前に別れた恋人だと気がついた。</p></blockquote><h2 id="なり"><a href="#なり" class="headerlink" title="なり"></a>なり</h2><p>一……就……。不用在第一人称而只用于第三人称，前后主语需要一致。</p><blockquote><p>彼はコーヒーを一口飲むなり、吐き出してしまった。</p></blockquote><h2 id="そばから"><a href="#そばから" class="headerlink" title="そばから"></a>そばから</h2><p>这个文型强调的是反复性。比如说雪落在肩上，擦掉，又落下来，又擦掉。经常是一些不好的事情。</p><blockquote><p>毎日返事を書くそばから次々に新しいメールが来る。</p></blockquote><h2 id="てからというもの"><a href="#てからというもの" class="headerlink" title="てからというもの"></a>てからというもの</h2><p>这个文型表现的是自从……之后，就有一个持续性的状态。不太用来形容时间太近的事情，也是强调某个时间点之后一直的状态。</p><blockquote><p>娘が大学に入り家を出て行ってからというもの、家の中が寂しくなった。</p></blockquote><h2 id="たとたん"><a href="#たとたん" class="headerlink" title="たとたん"></a>たとたん</h2><p>这个语法最值得在意的是前面的接续，别的语法可以接简体或者た形，但是这个语法只能接后者。同时后面跟令人惊讶的事情，表示“……的瞬间，就……（令人惊讶，令人措手不及）”。</p><blockquote><p>玄関のドアを開けた途端、犬が飛び出してきた。</p></blockquote><h2 id="かと思うと"><a href="#かと思うと" class="headerlink" title="かと思うと"></a>かと思うと</h2><p>后面接意想不到的事情。</p><blockquote><p>空が急に暗くなったかと思うと、大雨が降ってきた。</p></blockquote><h3 id="次第"><a href="#次第" class="headerlink" title="次第"></a>次第</h3><p>这个词语有三个用法，其中一个是表示一……就……，但是他表示未发生的事情，比如说老板一回来我就让他给你回电话。接续的话前面是动词连用形。</p><blockquote><p>彼が帰り次第すぐに返事させて。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在N3及其以上的语法中，有几个表示一怎么怎么样就怎么怎么样的语法。下面就列举他们中的一些以及他们的适用场景。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="语言" scheme="http://yoursite.com/categories/%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="日语" scheme="http://yoursite.com/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="语法" scheme="http://yoursite.com/tags/%E8%AF%AD%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>日语中自动词与他动词的形态对应</title>
